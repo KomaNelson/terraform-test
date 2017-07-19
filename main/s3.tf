@@ -1,19 +1,23 @@
-#Basic S3 bucket creation
+#AWS Provider
 provider "aws" {
     access_key = "${var.aws_access_key}"
     secret_key = "${var.aws_secret_key}"
     region = "${var.aws_region}"
 }
+#Bucket Creation
+resource "aws_s3_bucket" "trial_bucket" {
+  bucket = "${var.aws_bucket}"
+  acl    = "private"
 
-resource "aws_s3_bucket" "test_bucket" {
-  bucket = "${var.test_bucket_name}"
-  acl    = "public"
   tags {
-    Name        = "Testing-Bucket"
-    Environment = "QA"
+    Project     ="${var.aws_project_name}"
+    Environment = "Dev"
   }
+  #Writing the bucket ARN to a file for late use
+  provisioner "local-exec" {
+    command     = "echo Bucket ARN: ${aws_s3_bucket.trial_bucket.arn} > outputs.txt"
+    }
 }
-
 output "s3_bucket_arn" {
-  value = "${aws_s3_bucket.test_bucket.arn}"
+  value = "${aws_s3_bucket.trial_bucket.arn}"
 }
