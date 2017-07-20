@@ -7,7 +7,7 @@ image_resource:
     tag: 2.4.1
 
 inputs:
-- name: flight-school
+- name: terraform-resource
 
 run:
   path: ./terraform-resource/script/test.sh
