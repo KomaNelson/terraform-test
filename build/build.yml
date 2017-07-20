@@ -10,4 +10,4 @@ inputs:
 - name: flight-school
 
 run:
-  path: ./flight-school/ci/test.sh
+  path: ./terraform-resource/script/test.sh
