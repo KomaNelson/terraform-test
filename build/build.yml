@@ -9,7 +9,7 @@ image_resource:
 inputs:
 - name: terraform-resource
 run:
-  path: /usr/bin/chmod +x
+  path: chmod +x
     args:
       - /terraforom-resource/script/test.sh
 run:
