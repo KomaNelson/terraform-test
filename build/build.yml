@@ -9,8 +9,5 @@ image_resource:
 inputs:
 - name: flight-school
 
-#outputs:
-#  - name: release
-
 run:
   path: ./flight-school/ci/test.sh
