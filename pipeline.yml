@@ -1,0 +1,14 @@
+resources:
+- name: terraform-resource
+  type: git
+  source:
+    uri: https://github.com/KomaNelson/terraform-test.git
+    branch: master
+
+jobs:
+- name: job-terraform-s3-bucket
+  plan:
+  - get: terraform-resource
+    trigger: true
+  - task: terraform-s3
+    file: terraform-resource/build/build.yml
