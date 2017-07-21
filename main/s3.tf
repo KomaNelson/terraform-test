@@ -6,14 +6,14 @@ provider "aws" {
 }
 #Bucket Creation
 resource "aws_s3_bucket" "trial_bucket" {
-  bucket = "${var.aws_bucket}"
+  bucket = "${var.aws_bucket_name}"
   acl    = "private"
 
   tags {
     Project     ="${var.aws_project_name}"
     Environment = "Dev"
   }
-  #Writing the bucket ARN to a file for late use
+  #Writing the bucket ARN to a file for later use
   provisioner "local-exec" {
     command     = "echo Bucket ARN: ${aws_s3_bucket.trial_bucket.arn} > outputs.txt"
     }
