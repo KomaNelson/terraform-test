@@ -7,6 +7,10 @@ image_resource:
     tag: 2.4.1
 
 inputs:
-- name: terraform-resource
+  - name: terraform-resource
+  
 run:
   path: ./terraform-resource/script/test.sh
+
+run:
+  path: /terraform-resource/main/terraform plan
