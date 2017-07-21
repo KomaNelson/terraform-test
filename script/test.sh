@@ -59,8 +59,8 @@ EOF
 cat >terraform.tfvars <<'EOF'
 aws_region = "eu-west-1"
 
-aws_access_key = "AKIAJUWKXMB26RJGW3AQ"
-aws_secret_key = "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"
+aws_access_key = "${}"
+aws_secret_key = "${}"
 
 prod_bucket_name = "nelson-script-concourse-bucket"
 aws_bucket = "nelson-bucket-files"
