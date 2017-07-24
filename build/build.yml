@@ -12,7 +12,7 @@ inputs:
 run:
   path: ./terraform-resource/script/test.sh
 
-run:
-  path: /usr/bin/terraform
-  args:
-  - plan
+#run:
+#  path: /usr/bin/terraform
+#  args:
+#  - plan
