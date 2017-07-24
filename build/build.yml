@@ -13,6 +13,6 @@ run:
   path: ./terraform-resource/script/test.sh
 
 run:
-  path: terraform
+  path: /usr/bin/terraform
   args:
   - plan
