@@ -16,5 +16,7 @@ if [ ! -x "$unzip" ]; then
   apt-get install -y unzip
 fi
 
+#PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+export PATH=$PATH:/usr/bin
 unzip terraform.zip
 rm terraform.zip && cp terraform /usr/bin/
