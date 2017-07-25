@@ -12,8 +12,24 @@ jobs:
     trigger: true
   - task: terraform-s3
     file: terraform-resource/build/build.yml
-    on_success:
-      run:
-        path: /usr/bin/terraform
-        args:
-         - plan
+    params:
+      aws_ID: ((aws_access_key))
+      aws_KEY: ((aws_secret_key))
+      aws_Region: ((aws_region))
+    
+- name: plan-terraform
+  plan:
+   - get: terraform-resource
+   - task: terraform
+     config:
+       platform: linux
+       image: 
+       inputs:
+        - name: terra-output
+     run: 
+       path: sh
+       args:
+        - -exc
+        - |
+          cd terraform-resource/main/
+          terraform plan
