@@ -18,5 +18,5 @@ fi
 
 export PATH=$PATH:/usr/bin
 unzip terraform.zip
-echo $PATH
+echo $PATH && echo "pwd" && pwd
 rm terraform.zip && cp terraform /usr/bin/ && ls -ahl /usr/bin/
