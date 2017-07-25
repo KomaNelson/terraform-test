@@ -17,4 +17,4 @@ jobs:
       aws_KEY: ((aws_secret_key))
       aws_Region: ((aws_region))
   - task: terraform-prepare
-    file: terraform-resource/build/terraform_prepare.yml
+    file: terraform-resource/build/prepared_terraform.sh
