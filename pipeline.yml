@@ -6,30 +6,15 @@ resources:
     branch: master
 
 jobs:
-- name: job-terraform-s3-bucket
+- name: create-s3-bucket
   plan:
   - get: terraform-resource
     trigger: true
-  - task: terraform-s3
-    file: terraform-resource/build/build.yml
+  - task: install-terraform
+    file: terraform-resource/build/install_terraform.yml
     params:
       aws_ID: ((aws_access_key))
       aws_KEY: ((aws_secret_key))
       aws_Region: ((aws_region))
-    
-- name: plan-terraform
-  plan:
-   - get: terraform-resource
-   - task: terraform
-     config:
-       platform: linux
-       image: 
-       inputs:
-        - name: terra-output
-     run: 
-       path: sh
-       args:
-        - -exc
-        - |
-          cd terraform-resource/main/
-          terraform plan
+  - task: terraform-prepare
+    file: terraform-resource/build/terraform_prepare.yml
