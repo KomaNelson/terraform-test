@@ -8,11 +8,10 @@ image_resource:
 
 inputs:
   - name: terraform-resource
+
+outputs:
+  - name: terra-output
   
 run:
   path: ./terraform-resource/script/test.sh
 
-#run:
-#  path: /usr/bin/terraform
-#  args:
-#  - plan
