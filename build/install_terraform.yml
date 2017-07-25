@@ -1,0 +1,14 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: busybox}
+
+inputs:
+- name: terraform-resource
+
+outputs:
+- name: installed-terraform
+
+run:
+  path: ./terraform-resource/script/install_terraform.sh
