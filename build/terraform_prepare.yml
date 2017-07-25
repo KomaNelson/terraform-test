@@ -14,4 +14,4 @@ outputs:
 - name: prepared-terraform
 
 run:
-  path: ./terraform-resource/script/terraform_prepare.sh
+  path: ./terraform-resource/script/prepared_terraform.sh
