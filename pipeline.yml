@@ -16,5 +16,6 @@ jobs:
       aws_ID: ((aws_access_key))
       aws_KEY: ((aws_secret_key))
       aws_Region: ((aws_region))
-  - task: terraform-prepare
-    file: terraform-resource/build/prepared_terraform.sh
+    on_success:
+      task: terraform-prepare
+      file: terraform-resource/build/prepared_terraform.sh
