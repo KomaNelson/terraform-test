@@ -16,7 +16,10 @@ if [ ! -x "$unzip" ]; then
   apt-get install -y unzip
 fi
 
-export PATH=$PATH:/usr/bin
 unzip terraform.zip
 rm terraform.zip && cp terraform /usr/bin/ && rm terraform && cd ..
+
+#Get a fresh copy of the code
+git clone git@github.com:KomaNelson/terraform-test.git
+
 cd terraform-resource/main && terraform plan
